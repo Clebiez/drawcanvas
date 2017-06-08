@@ -84,7 +84,7 @@ export default class Drawcanvas {
         }
     }
 
-    clearPad() {
+    clear() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.clickX = [];
         this.clickY = [];
