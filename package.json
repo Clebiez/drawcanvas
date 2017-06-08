@@ -1,6 +1,6 @@
 {
   "name": "drawcanvas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Little ES6 drawing plugin without any dependencie",
   "main": "drawcanvas.js",
   "scripts": {

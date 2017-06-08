@@ -1,4 +1,4 @@
-# drawcanvas
+# Drawcanvas
 
 Little ES6 drawing plugin without any dependencie and mobile friendly.
 
