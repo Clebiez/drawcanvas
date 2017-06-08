@@ -1,0 +1,11 @@
+{
+  "name": "drawcanvas",
+  "version": "1.0.0",
+  "description": "Little ES6 drawing plugin without any dependencie",
+  "main": "drawpad.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clément Le Biez",
+  "license": "ISC"
+}
