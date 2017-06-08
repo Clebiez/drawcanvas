@@ -1,11 +1,20 @@
 {
   "name": "drawcanvas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Little ES6 drawing plugin without any dependencie",
-  "main": "drawcanvas.js",
+  "main": "/dist/drawcanvas.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack"
   },
   "author": "Clément Le Biez",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.2",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.1"
+  }
 }
