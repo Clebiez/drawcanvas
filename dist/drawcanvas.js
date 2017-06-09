@@ -1,1 +1,208 @@
-!function(t){function e(i){if(n[i])return n[i].exports;var s=n[i]={i:i,l:!1,exports:{}};return t[i].call(s.exports,s,s.exports,e),s.l=!0,s.exports}var n={};e.m=t,e.c=n,e.i=function(t){return t},e.d=function(t,n,i){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:i})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/",e(e.s=1)}([function(t,e,n){"use strict";function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var s=function(){function t(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,n,i){return n&&t(e.prototype,n),i&&t(e,i),e}}(),c=function(){function t(e){var n=this;i(this,t),this.canvas=document.getElementById(e.canvas),this.context=this.canvas.getContext("2d"),this.clickX=[],this.clickY=[],this.clickDrag=[],this.color=e.color?e.color:"#000",this.size=e.size?e.size:3,this.canvas.addEventListener("mousedown",function(t){n.start(t)}),this.canvas.addEventListener("touchstart",function(t){t.preventDefault();var e=n.offset(n.canvas),i={offsetX:t.touches[0].pageX-e.left,offsetY:t.touches[0].pageY-e.top};n.start(i)}),this.canvas.addEventListener("mousemove",function(t){n.move(t)}),this.canvas.addEventListener("touchmove",function(t){t.preventDefault();var e=n.offset(n.canvas),i={offsetX:t.touches[0].pageX-e.left,offsetY:t.touches[0].pageY-e.top};n.move(i)}),this.canvas.addEventListener("mouseup",function(){n.stop()}),this.canvas.addEventListener("touchend",function(){n.stop()})}return s(t,[{key:"start",value:function(t){this.paint=!0,this.addClick(t.offsetX,t.offsetY,!1)}},{key:"move",value:function(t){this.paint&&this.addClick(t.offsetX,t.offsetY,!0)}},{key:"stop",value:function(t){this.paint=!1}},{key:"addClick",value:function(t,e,n){this.clickX.push(t),this.clickY.push(e),this.clickDrag.push(n),this.redraw()}},{key:"redraw",value:function(){this.context.clearRect(0,0,this.canvas.width,this.canvas.height),this.context.strokeStyle=this.color,this.context.lineJoin="round",this.context.lineWidth=this.size;for(var t=0;t<this.clickX.length;t++)this.context.beginPath(),this.clickDrag[t]&&t?this.context.moveTo(this.clickX[t-1],this.clickY[t-1]):this.context.moveTo(this.clickX[t]-1,this.clickY[t]),this.context.lineTo(this.clickX[t],this.clickY[t]),this.context.closePath(),this.context.stroke()}},{key:"clear",value:function(){this.context.clearRect(0,0,this.canvas.width,this.canvas.height),this.clickX=[],this.clickY=[],this.dragging=[]}},{key:"offset",value:function(t){return t.getBoundingClientRect()}}]),t}();e.default=c},function(t,e,n){t.exports=n(0)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Drawcanvas = function () {
+    function Drawcanvas(options) {
+        var _this = this;
+
+        _classCallCheck(this, Drawcanvas);
+
+        this.canvas = document.getElementById(options.canvas);
+        this.context = this.canvas.getContext('2d');
+
+        this.clickX = [];
+        this.clickY = [];
+        this.clickDrag = [];
+        this.color = options.color ? options.color : '#000';
+        this.size = options.size ? options.size : 3;
+        this.canvas.addEventListener('mousedown', function (e) {
+            _this.start(e);
+        });
+        this.canvas.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            var canvasCoords = _this.offset(_this.canvas);
+            var t = {
+                offsetX: e.touches[0].pageX - canvasCoords.left,
+                offsetY: e.touches[0].pageY - canvasCoords.top
+            };
+            _this.start(t);
+        });
+
+        this.canvas.addEventListener('mousemove', function (e) {
+            _this.move(e);
+        });
+
+        this.canvas.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+            var canvasCoords = _this.offset(_this.canvas);
+            var t = {
+                offsetX: e.touches[0].pageX - canvasCoords.left,
+                offsetY: e.touches[0].pageY - canvasCoords.top
+            };
+            _this.move(t);
+        });
+
+        this.canvas.addEventListener('mouseup', function () {
+            _this.stop();
+        });
+        this.canvas.addEventListener('touchend', function () {
+            _this.stop();
+        });
+    }
+
+    _createClass(Drawcanvas, [{
+        key: 'start',
+        value: function start(e) {
+            this.paint = true;
+            this.addClick(e.offsetX, e.offsetY, false);
+        }
+    }, {
+        key: 'move',
+        value: function move(e) {
+            if (this.paint) {
+                this.addClick(e.offsetX, e.offsetY, true);
+            }
+        }
+    }, {
+        key: 'stop',
+        value: function stop(e) {
+            this.paint = false;
+        }
+    }, {
+        key: 'addClick',
+        value: function addClick(x, y, dragging) {
+            this.clickX.push(x);
+            this.clickY.push(y);
+            this.clickDrag.push(dragging);
+            this.redraw();
+        }
+    }, {
+        key: 'redraw',
+        value: function redraw() {
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.context.strokeStyle = this.color;
+            this.context.lineJoin = 'round';
+            this.context.lineWidth = this.size;
+
+            for (var i = 0; i < this.clickX.length; i++) {
+                this.context.beginPath();
+                if (this.clickDrag[i] && i) {
+                    this.context.moveTo(this.clickX[i - 1], this.clickY[i - 1]);
+                } else {
+                    this.context.moveTo(this.clickX[i] - 1, this.clickY[i]);
+                }
+                this.context.lineTo(this.clickX[i], this.clickY[i]);
+                this.context.closePath();
+                this.context.stroke();
+            }
+        }
+    }, {
+        key: 'clear',
+        value: function clear() {
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.clickX = [];
+            this.clickY = [];
+            this.dragging = [];
+        }
+    }, {
+        key: 'offset',
+        value: function offset(elt) {
+            return elt.getBoundingClientRect();
+        }
+    }]);
+
+    return Drawcanvas;
+}();
+
+exports.default = Drawcanvas;
+module.exports = exports['default'];
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
+
+
+/***/ })
+/******/ ]);
