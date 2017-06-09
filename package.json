@@ -5,16 +5,17 @@
   "main": "/dist/drawcanvas.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack"
+    "build": "rimraf ./dist && ./node_modules/.bin/webpack"
   },
   "author": "Clément Le Biez",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.1",
     "webpack": "^2.6.1"
-  },
-  "dependencies": {
-    "babel-core": "^6.24.1"
   }
 }

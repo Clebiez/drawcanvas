@@ -13,17 +13,9 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader?presets=env'],
+        use: ['babel-loader'],
         include: '/'
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        drop_console: true
-      }
-    })
-  ]
+  }
 };
